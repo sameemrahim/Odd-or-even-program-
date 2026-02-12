@@ -1,0 +1,19 @@
+class InterestCalculator {
+    double principal, rate, time;
+
+    void calculateSimpleInterest() {
+        double si = (principal * rate * time) / 100;
+        System.out.println("Simple Interest: " + si);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        InterestCalculator obj = new InterestCalculator();
+        obj.principal = 10000;
+        obj.rate = 5;
+        obj.time = 2;
+
+        obj.calculateSimpleInterest();
+    }
+}
