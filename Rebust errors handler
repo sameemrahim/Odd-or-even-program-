@@ -1,0 +1,19 @@
+public class RobustErrorHandler {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1, 2, 3};
+            System.out.println(arr[5]);  // Array error
+
+            int num = Integer.parseInt("abc");  // Number error
+        } 
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index error!");
+        } 
+        catch (NumberFormatException e) {
+            System.out.println("Invalid number format!");
+        } 
+        catch (Exception e) {
+            System.out.println("General exception occurred!");
+        }
+    }
+}
