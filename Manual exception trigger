@@ -1,0 +1,11 @@
+public class ManualExceptionTrigger {
+    public static void main(String[] args) {
+        int marks = 35;
+
+        if (marks < 40) {
+            throw new ArithmeticException("Student failed!");
+        }
+
+        System.out.println("Student passed");
+    }
+}
