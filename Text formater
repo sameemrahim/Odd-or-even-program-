@@ -1,0 +1,9 @@
+public class TextFormatter {
+    public static void main(String[] args) {
+        String text = "Hello World Java";
+
+        String result = text.replace(" ", "");
+
+        System.out.println("Without spaces: " + result);
+    }
+}
