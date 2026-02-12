@@ -1,0 +1,35 @@
+class TaskA extends Thread {
+    public void run() {
+        System.out.println("Task A started");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        System.out.println("Task A completed");
+    }
+}
+
+class TaskB extends Thread {
+    public void run() {
+        System.out.println("Task B started");
+        System.out.println("Task B completed");
+    }
+}
+
+public class DependencyExecutionSystem {
+    public static void main(String[] args) {
+        TaskA t1 = new TaskA();
+        TaskB t2 = new TaskB();
+
+        t1.start();
+
+        try {
+            t1.join();  // Wait until Task A completes
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+
+        t2.start();
+    }
+}
